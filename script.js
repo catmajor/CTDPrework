@@ -17,6 +17,9 @@ async function main() {
 		document.getElementById("weather").textContent = `${weatherCodes(current.weather_code)}`
 		document.getElementById("precipitation").textContent = `${current.precipitation} ${units.precipitation}`;
 		document.getElementById("wind").textContent = `${current.wind_speed_10m} ${units.wind_speed_10m} ${degToDir(current.wind_direction_10m)}`;
+		document.getElementById("longitude").textContent = `${coordinates.longitude}`;
+		document.getElementById("latitude").textContent = `${coordinates.latitude}`;
+		document.body.classList.add("show-data");
 	});
 }
 main();
