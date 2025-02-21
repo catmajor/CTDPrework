@@ -20,7 +20,7 @@ async function main() {
 		document.getElementById("longitude").textContent = `${coordinates.longitude}`;
 		document.getElementById("latitude").textContent = `${coordinates.latitude}`;
 		document.body.classList.add("show-data");
-		if (current.is_day === 1) {
+		if (current.is_day === 0) {
 			document.body.classList.add("is-daylight");
 		}
 	});

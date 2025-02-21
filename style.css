@@ -17,6 +17,7 @@ body.is-daylight {
     --c6: #79bbea; --c6-rgb: 121, 187, 234;
 }
 main {
+    font-family: 'Noto Sans';
     display: flex;
     flex-direction: column;
     display: flex;
@@ -48,6 +49,7 @@ body.show-data #intro-page {display: none}
 .h1 {
     font-size: 5vmin;
     font-weight:bolder;
+    font-family: 'Bebas Neue';
 }
 .h2 {
     font-size: 2vmin;
