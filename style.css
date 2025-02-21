@@ -1,13 +1,20 @@
 body {
-    padding: 0; margin: 0;
+    padding: 0; margin: 0; position: relative;
+    --c1: #fff; --c1-rgb: 255, 255, 255;  
+    --c2: #fff; --c2-rgb: 255, 255, 255;  
+    --c3: #fff; --c3-rgb: 255, 255, 255;  
+    --c4: #fff; --c4-rgb: 255, 255, 255;  
+    --c5: #fff; --c5-rgb: 255, 255, 255;  
+    --c6: #000; --c6-rgb: 0, 0, 0;
+}
+body.is-night {
     --c1: #fd9d7f; --c1-rgb: 253, 157, 127;
     --c2: #ffc19f; --c2-rgb: 255, 193, 159;
     --c3: #f09f9c; --c3-rgb: 240, 159, 156;
     --c4: #c86b98; --c4-rgb: 200, 107, 152;
     --c5: #642b6b; --c5-rgb: 100, 43, 107;
-    --c6: #270f36; --c6-rgb: 39, 15, 54;
+    --c6: #270f36; --c6-rgb: 39, 15, 54;   
 }
-
 body.is-daylight {
     --c1: #fad36f; --c1-rgb: 250, 211, 111;
     --c2: #f8e096; --c2-rgb: 248, 224, 150;
@@ -17,22 +24,39 @@ body.is-daylight {
     --c6: #79bbea; --c6-rgb: 121, 187, 234;
 }
 main {
+    transition: 0.5s;
+    position: absolute;
+}
+#cover {
+    width: 100%; 
+    height: 100%;
+    z-index: -1;
+    background-color: black;
+    transition: opacity 1s ease-in;
+    opacity: 0;
+}
+#cover.blockout {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+#cover.z-index-fix {
+    z-index: 99;
+}
+#intro-page {
+    display: flex;
     font-family: 'Noto Sans';
-    display: flex;
     flex-direction: column;
-    display: flex;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, var(--c6) 0%, var(--c5) 30%, var(--c4) 60%, var(--c3));
-    justify-content: center; 
+    background: white;
+    justify-content: center;
     align-items: center;
 }
-#show-after-data-aquired {display: none}
-main>div {
+#show-after-data-aquired>div {
     display: flex;
     padding: 10px;
     border: var(--c6) solid 2px;
-    background: linear-gradient(to bottom, rgba(var(--c1-rgb), 0.6) 0%, rgba(var(--c2-rgb), 0.6) 50%, rgba(var(--c3-rgb), 0.6));
+    background: rgba(var(--c1-rgb), 0.2);
     height: 50%;
     width: 50%;
     justify-content: space-evenly;
@@ -44,7 +68,19 @@ main>div {
 .data-subtext>div {
     margin: 10px 0 10px 0;
 }
-body.show-data #show-after-data-aquired {display: flex}
+body.show-data #show-after-data-aquired {
+    display: flex;
+    font-family: 'Noto Sans';
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--c6) 0%, var(--c5) 30%, var(--c4) 60%, var(--c3));
+    justify-content: center; 
+    align-items: center;
+}
+#show-after-data-aquired {
+    display: none;
+}
 body.show-data #intro-page {display: none}
 .h1 {
     font-size: 5vmin;
@@ -54,4 +90,36 @@ body.show-data #intro-page {display: none}
 .h2 {
     font-size: 2vmin;
     font-weight: bold;
+}
+#show-data {
+    font-size: 3vmin;
+    border: var(--c6) solid 2px;
+    font-weight: lighter;
+    text-align: center;
+}
+.h6 {
+    color: #777;
+    font-size: 2vmin
+}
+#title {
+    padding: 0;
+    height: calc(4.5vmin)
+}
+#dropdown-button>div {
+    width: 2vmin
+}
+#dropdown {
+    display: flex;
+}
+#dropdown.open #dropdown-closed-button {
+    display: none
+}
+#dropdown.open #dropdown-open-button {
+    display: block;
+}
+#dropdown-open-button {
+    display: none
+}
+#dropdown-button {
+    display: flex;
 }
