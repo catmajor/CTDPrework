@@ -1,4 +1,55 @@
-body {padding: 0; margin: 0;}
-main {display: flex; flex-direction: column}
+body {
+    padding: 0; margin: 0;
+    --c1: #fd9d7f; --c1-rgb: 253, 157, 127;
+    --c2: #ffc19f; --c2-rgb: 255, 193, 159;
+    --c3: #f09f9c; --c3-rgb: 240, 159, 156;
+    --c4: #c86b98; --c4-rgb: 200, 107, 152;
+    --c5: #642b6b; --c5-rgb: 100, 43, 107;
+    --c6: #270f36; --c6-rgb: 39, 15, 54;
+}
+
+body.is-daylight {
+    --c1: #fad36f; --c1-rgb: 250, 211, 111;
+    --c2: #f8e096; --c2-rgb: 248, 224, 150;
+    --c3: #f4ecc9; --c3-rgb: 244, 236, 201;
+    --c4: #ecf6ff; --c4-rgb: 236, 246, 255;
+    --c5: #baddf6; --c5-rgb: 186, 221, 246;
+    --c6: #79bbea; --c6-rgb: 121, 187, 234;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--c6) 0%, var(--c5) 30%, var(--c4) 60%, var(--c3));
+    justify-content: center; 
+    align-items: center;
+}
 #show-after-data-aquired {display: none}
-body.show-data #show-after-data-aquired {display: block}
+main>div {
+    display: flex;
+    padding: 10px;
+    border: var(--c6) solid 2px;
+    background: linear-gradient(to bottom, rgba(var(--c1-rgb), 0.6) 0%, rgba(var(--c2-rgb), 0.6) 50%, rgba(var(--c3-rgb), 0.6));
+    height: 50%;
+    width: 50%;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.data-subtext {
+    margin-left: 10px; 
+}
+.data-subtext>div {
+    margin: 10px 0 10px 0;
+}
+body.show-data #show-after-data-aquired {display: flex}
+body.show-data #intro-page {display: none}
+.h1 {
+    font-size: 5vmin;
+    font-weight:bolder;
+}
+.h2 {
+    font-size: 2vmin;
+    font-weight: bold;
+}

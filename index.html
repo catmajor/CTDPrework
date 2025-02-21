@@ -2,24 +2,44 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>
-		<main id="show-after-data-aquired">
-			<div id="location">
-				<div>Location:</div>
-				<div>Longitude: <span id="latitude"></span></div>
-				<div>Latitude: <span id="longitude"></span></div>
+	<body class="is-daylght">
+		<main id="intro-page">
+			<div>
+				<div>Weather API Viewer</div>
+				<div id="enter-manually">
+					<div id="dropdown" class="button"></div>
+					<div>
+						<div id="enter-latitude"></div>
+						<div id="enter-longitude"></div>
+					</div>
+				</div>
+				<div id="show-data" class="button"></div>
 			</div>
-			<div id="current">
-				<div>Current Weather:&nbsp;<span id="weather"></span></div>
-				<div>
-					<div>
-						<span>Temperature:&nbsp;</span><span id="temperature"></span>
+		</main>
+		<main id="show-after-data-aquired">
+			<div>
+				<div id="location">
+					<div><span class="h1">Location:&nbsp;</span></div>
+					<div class="data-subtext">
+						<div><span class="h2">Longitude:&nbsp;</span><span id="latitude"></span></div>
+						<div><span class="h2">Latitude:&nbsp;</span><span id="longitude"></span></div>
 					</div>
-					<div>
-						<span>Precipitation:&nbsp;</span><span id="precipitation"></span>
-					</div>
-					<div>
-						<span>Wind:&nbsp;</span><span id="wind"></span>
+				</div>
+				<div id="current">
+					<div><span class="h1">Current Weather:&nbsp;</span></div>
+					<div class="data-subtext">
+						<div>
+							<span class="h2">Right now it is </span><span id="weather"></span>
+						</div>
+						<div>
+							<span class="h2">Temperature:&nbsp;</span><span id="temperature"></span>
+						</div>
+						<div>
+							<span class="h2">Precipitation:&nbsp;</span><span id="precipitation"></span>
+						</div>
+						<div>
+							<span class="h2">Wind:&nbsp;</span><span id="wind"></span>
+						</div>
 					</div>
 				</div>
 			</div>

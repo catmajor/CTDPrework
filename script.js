@@ -7,7 +7,7 @@ async function main() {
 	let tempname = "fahrenheit";
 	await navigator.geolocation.getCurrentPosition(async (geolocation) => {
 		coordinates = geolocation.coords;
-		const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coordinates.latitude}&longitude=${coordinates.longitude}&current=temperature_2m,relative_humidity_2m,precipitation,rain,showers,snowfall,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m&temperature_unit=${tempname}`);
+		const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coordinates.latitude}&longitude=${coordinates.longitude}&current=temperature_2m,relative_humidity_2m,precipitation,rain,showers,snowfall,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&temperature_unit=${tempname}`);
 		const data = await response.json();
 		console.log(data);
 		const current = data.current;
@@ -20,6 +20,9 @@ async function main() {
 		document.getElementById("longitude").textContent = `${coordinates.longitude}`;
 		document.getElementById("latitude").textContent = `${coordinates.latitude}`;
 		document.body.classList.add("show-data");
+		if (current.is_day === 1) {
+			document.body.classList.add("is-daylight");
+		}
 	});
 }
 main();
