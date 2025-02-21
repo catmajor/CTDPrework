@@ -78,8 +78,18 @@ body.show-data #show-after-data-aquired {
     justify-content: center; 
     align-items: center;
 }
+.button {
+    cursor: pointer;
+    user-select: none;
+}
 #show-after-data-aquired {
     display: none;
+}
+#show-data {
+    transition: background-color 0.5s;
+}
+#show-data:hover, #show-data.disabled {
+    background-color: #ddd;
 }
 body.show-data #intro-page {display: none}
 .h1 {

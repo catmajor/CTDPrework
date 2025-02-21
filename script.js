@@ -26,7 +26,7 @@ async function main() {
 		const request = (async () => {
 			const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coordinates.latitude}&longitude=${coordinates.longitude}&current=temperature_2m,relative_humidity_2m,precipitation,rain,showers,snowfall,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&temperature_unit=${tempname}`);
 			return await response.json();
-		})()
+		})();
 		request.then(data => dataVar = data);
 		await Promise.all([request, timer]);
 		setTimeout(() => {
