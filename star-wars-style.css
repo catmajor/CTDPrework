@@ -57,7 +57,7 @@ main {
     padding: 10px;
     border: var(--c6) solid 2px;
     background: rgba(var(--c1-rgb), 0.2);
-    height: 50%;
+    min-height: 50%;
     width: 50%;
     justify-content: space-evenly;
     flex-direction: column;
@@ -88,7 +88,7 @@ body.show-data #show-after-data-aquired {
 #show-data {
     transition: background-color 0.5s;
 }
-#show-data:hover, #show-data.disabled, #go-to-starwars:hover {
+#show-data:hover, #show-data.disabled, #go-to-weather:hover {
     background-color: #ddd;
 }
 body.show-data #intro-page {display: none}
@@ -101,13 +101,13 @@ body.show-data #intro-page {display: none}
     font-size: 2vmin;
     font-weight: bold;
 }
-#show-data, #go-to-starwars {
+#show-data, #go-to-weather {
     font-size: 3vmin;
     border: var(--c6) solid 2px;
     font-weight: lighter;
     text-align: center;
 }
-#go-to-starwars {
+#go-to-weather, #show-data {
     margin-top: 0.5vmin
 }
 .h6 {
@@ -117,34 +117,4 @@ body.show-data #intro-page {display: none}
 #title {
     padding: 0;
     height: 4.5vmin;
-}
-#dropdown-button>div {
-    width: 2vmin
-}
-#dropdown {
-    display: flex;
-}
-#dropdown.open #dropdown-closed-button {
-    display: none
-}
-#dropdown.open #dropdown-open-button {
-    display: block;
-}
-#dropdown-open-button {
-    display: none
-}
-#dropdown-button {
-    display: flex;
-}
-#dropdown + div {display:none}
-#dropdown.open + div {display: block}
-input {
-    all: unset;
-    font-family: 'Noto Sans'
-}
-input.invalid {
-    color: red;
-}
-#dropdown+div input {
-    margin-left: 2vmin;
 }

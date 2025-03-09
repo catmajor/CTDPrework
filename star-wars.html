@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="star-wars-style.css">
+	</head>
+	<body class="is-daylght">
+		<main id="cover"></main>
+		<main id="intro-page">
+			<div>
+				<div class="h1" id="title">Star Wars API Viewer</div>
+				<div id="show-data" class="button h1">Show Random Person</div>
+				<div class="h1" id="title">Weather API Viewer</div>
+				<div id="go-to-weather" class="button h1">Go To Page</div>
+			</div>
+
+		</main>
+		<main id="show-after-data-aquired">
+			<div>
+				<div id="header">
+					<div><span class="h1">Your Person:&nbsp;</span></div>
+					<div class="data-subtext">
+                        <div><span class="h2">Name:&nbsp;</span><span id="name"></span></div>
+						<div><span class="h2">Born:&nbsp;</span><span id="birth-year"></span></div>
+                        <div><span class="h2">Height:&nbsp;</span><span id="height"></span></div>
+                        <div><span class="h2">Eye Color:&nbsp;</span><span id="eye-color"></span></div>
+                        <div><span class="h2">Weight:&nbsp;</span><span id="weight"></span></div>
+					</div>
+				</div>
+				<div id="current">
+					<div><span class="h1">Home World Info:&nbsp;</span></div>
+					<div class="data-subtext">
+						<div><span class="h2">Name:&nbsp;</span><span id="homeworld-name"></span></div>
+						<div><span class="h2">Climate:&nbsp;</span><span id="homeworld-climate"></span></div>
+                        <div><span class="h2">Terrain:&nbsp;</span><span id="homeworld-terrain"></span></div>
+                        <div><span class="h2">Population:&nbsp;</span><span id="homeworld-population"></span></div>
+                        <div><span class="h2">Day Length:&nbsp;</span><span id="homeworld-day"></span></div>
+                        <div><span class="h2">Year Length:&nbsp;</span><span id="homeworld-year"></span></div>
+					</div>
+				</div>
+                <div id="show-data" class="button h1">Show Another</div>
+                <div id="go-to-weather" class="button h1">Go To Weather API</div>
+			</div>
+		</main>
+		<script src="weather_info.js"></script>
+		<script src="star-wars-script.js"></script>
+	</body>
+</html>
